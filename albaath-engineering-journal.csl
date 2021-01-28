@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<style class="in-text" version="1.0" and="symbol" demote-non-dropping-particle="sort-only" xmlns="http://purl.org/net/xbiblio/csl">
+  <!-- This style was edited with the Visual CSL Editor (https://editor.citationstyles.org/visualEditor/) -->
+  <info>
+    <title>Albaath Engineering Journal</title>
+    <title-short>AEJ</title-short>
+    <id>http://www.zotero.org/styles/albaath-engineering-journal</id>
+    <link rel="self" href="http://www.zotero.org/styles/albaath-engineering-journal"/>
+    <author>
+      <email>ossnass@gmail.com</email>
+      <name>Ossama Nasser</name>
+    </author>
+    <published>2020</published>
+    <updated>2021-01-28T19:38:38+00:00</updated>
+    <rights>MIT</rights>
+    <link rel="aej" href="http://www.zotero.org/styles/albaath-engineering-journal"/>
+  </info>
+  <macro name="author">
+    <group>
+      <names variable="author">
+        <name and="symbol" initialize-with="." name-as-sort-order="all">
+          <name-part name="family" text-case="capitalize-first"/>
+          <name-part name="given" text-case="uppercase"/>
+        </name>
+      </names>
+      <text value=", "/>
+    </group>
+  </macro>
+  <citation>
+    <layout>
+      <group prefix="[" suffix="]">
+        <text variable="citation-number"/>
+      </group>
+    </layout>
+  </citation>
+  <bibliography name-as-sort-order="all">
+    <sort>
+      <key variable="author"/>
+    </sort>
+    <layout>
+      <group>
+        <text variable="citation-number" prefix="[" suffix="] "/>
+        <group>
+          <text macro="author"/>
+        </group>
+        <date date-parts="year" form="text" variable="issued" suffix=" "/>
+        <choose>
+          <if type="article article-journal article-magazine article-newspaper paper-conference" match="any">
+            <group>
+              <text variable="title" suffix=" "/>
+              <text variable="container-title" font-weight="bold" text-decoration="underline" suffix=", "/>
+              <choose>
+                <if type="article article-journal article-magazine article-newspaper" match="any">
+                  <group>
+                    <text term="volume" form="short" text-case="capitalize-first" suffix=" "/>
+                    <text variable="volume" suffix=", "/>
+                    <text term="issue" form="short" text-case="capitalize-first" suffix=" "/>
+                    <text variable="issue" suffix=", "/>
+                  </group>
+                </if>
+              </choose>
+              <text variable="page" suffix="."/>
+            </group>
+          </if>
+          <else-if type="book chapter thesis" match="any">
+            <group>
+              <text variable="title" font-weight="bold" text-decoration="underline" suffix=". "/>
+              <text variable="publisher" suffix=", "/>
+              <text variable="publisher-place" suffix=", "/>
+              <text variable="number-of-pages"/>
+            </group>
+          </else-if>
+        </choose>
+      </group>
+    </layout>
+  </bibliography>
+</style>
